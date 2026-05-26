@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            height: 100vh;
+            background: linear-gradient(180deg, #acd1ff,#ffffff, #ffacf7);
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>การเช็กพื้นที่พิกัดที่สามารถเข้าถึงได้</h1>
+
+    <h3>
+        การเช็กพื้นที่พิกัดที่สามารถเข้าถึงได้ หมายถึงการตรวจสอบบริเวณพิกัดของคุณ กับพิกัดบริเวณโรงเรียนว่าคุณอยู่บริเวณนี้หรือไม่
+    </h3>
+    <p style="color: brown;">
+        ***หากมีค่าใดใน 4 เงื่อนไขนี้ มีสีของตัวอักษรเป็นสีแดง หมายความว่าพิกัดของคุณ เลย หรือ ต่ำ กว่าค่าพิกัด ที่โปรแกรมระบุไว้ให้
+    </p>
+
+    <br>
+
+    <h1 style="color: blue;">---------------------------------</h1>
+
+    <p id="latmin">โปรดรอสักครู่...</p>
+    <p id="latmax">โปรดรอสักครู่...</p>
+    <p id="lonmin">โปรดรอสักครู่...</p>
+    <p id="lonmax">โปรดรอสักครู่...</p>
+
+    <br>
+
+    <h2 id="loca">โปรดรอสักครู่...</h2>
+    <p id="loca2">โปรดรอสักครู่...</p>
+
+    <h1 style="color: blue;">---------------------------------</h1>
+
+    <img id="place"></img>
+    <img id="describe"></img>
+
+    <button id="back" 
+    style="width: 300px; height: 100px; border-radius: 30px; background: rgb(20,20,20); color: white; font-size: 20px;">
+        กลับสู่หน้าแผนที่
+    </button>
+
+    <img class="pos">
+
+    <script src="./check.js"></script>
+    <script src="./map.js"></script>
+</body>
+</html>

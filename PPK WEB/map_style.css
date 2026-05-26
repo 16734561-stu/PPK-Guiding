@@ -1,0 +1,543 @@
+
+
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+        url(ppk.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 380px;
+    height: 650px;
+    background: linear-gradient(0deg, #ff9ad2,#ffffff, #a1a7ff) ;
+    border-radius: 25px;
+    padding: 30px;
+    
+
+    position: relative;
+    overflow: hidden;
+
+    z-index: 1;
+
+    box-shadow: 0 10px 50px 0 rgba(119, 31, 135, 0.37);
+    backdrop-filter: blur(10px);
+}
+
+iframe {
+    height: 300px;
+    border: 2.5px solid black;
+    display: block;
+    box-shadow: #ff9ad2 0px 0px 20px 0px;
+    border-radius: 15px;
+
+    transform: scale(0.73);
+
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+    right: 50px;
+    bottom: 30px;
+    
+}
+
+.web {
+    position: fixed;
+    color: #fff;
+    left: 15px;
+    top: 0px;
+}
+
+.app header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#check {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-left: auto;
+    border-radius: 15px;
+    color: black;
+
+    border: 1.5px solid black;
+
+    position: absolute;
+    right: 55px;
+}
+
+.app header button:hover {
+    transform: rotate(8deg);
+}
+
+.app header button:active {
+    transform: rotate(0deg);
+}
+
+#refresh {
+    display: flex;
+
+    position: absolute;
+    right: 120px;
+    background: transparent;
+    border: 0;
+    transition: 0.2s;
+}
+
+#reimg {
+    width: 30px;
+    height: auto;
+}
+
+#place {
+    margin: 0;
+    font-size: 11px;
+    margin: 10px 10px 0px 10px;
+}
+
+#describe {
+    margin: 2.5px;
+    font-size: 16px;
+    margin: 5px 10px 0px 10px;
+}
+
+#describe2 {
+    margin: 10px 0px 5px 0px;
+}
+
+#describe2 li {
+    font-size: 9px;
+    position: relative;
+    right: 17px;
+}
+
+#i {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s;
+    position:relative;
+    left: 20px;
+}
+
+#but_search {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s;
+    position:relative;
+    left: 20px;
+}
+
+.search button:hover {
+    transform: scale(1.05);
+}
+
+
+/*
+-------------------------------------------------------------------------------------------------------------------
+*/
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    bottom: 55px;
+}
+
+.searchbox {
+    display: flex;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    flex: 1;
+    
+}
+
+.search-box{
+  width:200px;
+  position:relative;
+  left: 20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:25px;
+  border:1px solid #000000;
+  outline:none;
+  font-size:10.5px;
+}
+
+.suggestions{
+  position:absolute;
+  top:50px;
+  width:100%;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  overflow:hidden;
+
+  max-height: 200px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+}
+
+.suggestions div{
+  padding:10px;
+  cursor:pointer;
+}
+
+.suggestions div:hover,
+.suggestions .active{
+  background:#f1f1f1;
+}
+
+.search button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+/*
+-----------------------------------------------------------------------------------------------------
+*/
+
+.tail {
+    display: flex;
+    flex-direction: row;
+    
+    border: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(252, 252, 252, 0.8),
+        rgba(255, 255, 255, 0.4)
+    );
+
+    justify-content: center;
+    
+    min-height: 210px;
+    height: auto;
+    border-radius: 30px;
+
+    box-shadow: #f2d5ff 0px 0px 40px 0px;
+
+    width: 440px;
+    
+    position: relative;
+    bottom: 55px;
+    right: 25px;
+
+    padding: 0px 0px 0px 0px;
+}
+
+.forset {
+    display: flex;
+    height: auto;
+
+    padding: 0px 0.5px;
+
+    margin: 20px 0px;
+    
+    background: linear-gradient(
+        0deg,
+        rgba(144, 205, 255, 0.8),
+        rgba(81, 122, 255, 0.4)
+    );
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    position: relative;
+    right: 45px;
+}
+
+.forset button {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border: 2.5px solid black;
+    background: transparent;
+    border-radius: 15px;
+    transition: 0.2s;
+    align-items: center;
+    justify-content: center;
+}
+
+.forset button:hover {
+    transform: scale(1.05);
+}
+
+.foot {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+
+    position: relative;
+    bottom: 70px;
+}
+
+.dfoot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        0deg,
+        rgba(144, 205, 255, 0.8),
+        rgba(81, 122, 255, 0.4)
+    );
+    height: 40px;
+    border-radius: 10px;
+    margin-left: auto;
+    gap: 10px;
+
+    padding: 0px 8px;
+
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+
+.forcell {
+    display: flex;
+    width: 25px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#mark {
+    display: flex;
+    position: fixed;
+    background: rgba(255, 168, 87, 0.644);
+    width: 150px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+}
+
+.side-text {
+    position: relative;
+    width: 150px;
+    height: 50px;
+
+    top: 10px;
+    right: 35px;
+}
+
+.infoscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 200px;
+    border-radius: 30px;
+    background: linear-gradient(
+        0deg,
+        rgba(59, 78, 176, 0.4),
+        rgba(98, 0, 189, 0.2)
+    );
+    position: relative;
+    top: 5px;
+    right: 50px;
+}
+
+#infochoice {
+    display: flex;
+    gap: 10px;
+    width: 180px;
+
+    border: 0;
+    border-radius: 30px;
+    height: 30px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.45);   
+
+    position: absolute;
+    top: 5px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#infochoice button {
+    margin: 0;
+    display: flex;
+    width: 80px;
+    height: 20px;
+    border: 0;
+    border-radius: 30px;
+    transition: 0.35s;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#infobut1 {
+    background: linear-gradient(180deg, rgb(179, 221, 255), rgb(180, 122, 255));
+}
+
+#infobut2 {
+    background: white;
+}
+
+#infochoice button:hover {
+    transform: scale(1.02);
+}
+
+#infochoice button:active {
+    transform: scale(0.98);
+}
+
+#theinfo {
+    opacity: 1;
+    margin: 0;
+    width: 90px;
+    height: 50px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(30, 30, 30, 0.8);
+
+    position: absolute;
+    bottom: 10px;
+    
+
+    border: none;
+    border-radius: 15px;
+
+    color: white;
+
+    padding: 0px;
+}
+
+#info1 {
+    margin: 0;
+    font-size: 10px;
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 20px;
+    font-weight: 200;
+}
+
+#theimg {
+    opacity: 1;
+    scale: 0.13;
+    position: relative;
+    left: 0px;
+    bottom: 10px;
+    transition: 0.35s;
+}
+
+#fortravel {
+
+    display: flex;
+
+    opacity: 0;
+
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+
+    width: 180px;
+    height: 150px;
+
+    background: rgba(254, 254, 254, 0.8);
+
+    border-radius: 20px;
+
+    color: black;
+
+    transition: 0.4s;
+}
+
+#fortravel h3 {
+    margin: 0 ;
+    padding: 1px;
+    color: black;
+    position: relative;
+    left: 5px;
+    font-size: 13px;
+    font-weight: 150;
+}
+
+
+#tool {
+
+    display: flex;
+
+    width: 120px;
+    height: 220px;
+
+    gap: 10px;
+
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+
+    position: absolute;
+    top: 90px;
+    right: 5px;
+
+    justify-content: center;
+
+    padding: 10px;
+}
+
+#compass {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(98, 98, 98, 0.8),
+        rgba(12, 12, 12, 0.4)
+    );
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0px 0px 30px 0px rgb(190, 190, 190);
+
+    transition: 0.2s;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

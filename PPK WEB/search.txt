@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Just Search Dude</title>
+<style>
+body{
+  font-family: Arial;
+  display:flex;
+  justify-content:center;
+  margin-top:100px;
+}
+
+.search-box{
+  width:400px;
+  position:relative;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:25px;
+  border:1px solid #ccc;
+  outline:none;
+  font-size:16px;
+}
+
+.suggestions{
+  position:absolute;
+  top:50px;
+  width:100%;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+
+.suggestions div{
+  padding:10px;
+  cursor:pointer;
+}
+
+.suggestions div:hover,
+.suggestions .active{
+  background:#f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search...">
+  <div class="suggestions" id="suggestions"></div>
+</div>
+
+<script>
+
+const data = [
+  "HTML tutorial",
+  "JavaScript course",
+  "How to code",
+  "How to make website",
+  "CSS design",
+  "React tutorial",
+  "Node.js backend",
+  "Python programming",
+  "ห้องเรียน",
+  "โรงเรียนพะเยาพิทยาคม"
+];
+
+const input = document.getElementById("search");
+const suggestions = document.getElementById("suggestions");
+let currentIndex = -1;
+
+input.addEventListener("input", () => {
+  const value = input.value.toLowerCase();
+  suggestions.innerHTML = "";
+  currentIndex = -1;
+
+  if (!value) return;
+
+  const filtered = data.filter(item =>
+    item.toLowerCase().includes(value)
+  );
+
+  filtered.forEach(item => {
+
+    const div = document.createElement("div");
+
+    div.textContent = item;
+    
+    div.addEventListener("click", () => {
+      input.value = item;
+      suggestions.innerHTML = "";
+    });
+    
+
+
+    suggestions.appendChild(div);
+  });
+});
+
+/*
+
+input.addEventListener("keydown", (e) => {
+  const items = suggestions.querySelectorAll("div");
+
+  if (e.key === "ArrowDown") {
+    currentIndex++;
+    updateActive(items);
+  }
+
+  if (e.key === "ArrowUp") {
+    currentIndex--;
+    updateActive(items);
+  }
+
+  if (e.key === "Enter" && currentIndex > -1) {
+    input.value = items[currentIndex].textContent;
+    suggestions.innerHTML = "";
+  }
+});
+
+function updateActive(items){
+  if (!items.length) return;
+
+  items.forEach(item => item.classList.remove("active"));
+
+  if (currentIndex >= items.length) currentIndex = 0;
+  if (currentIndex < 0) currentIndex = items.length - 1;
+
+  items[currentIndex].classList.add("active");
+}
+
+*/
+</script>
+
+</body>
+</html>

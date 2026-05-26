@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+        url(ppk.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.app {
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(0deg, #ff9ad2,#ffffff, #a1a7ff);
+    border-radius: 30px;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.app h1 {
+    font-size:50px;
+}
+.app p {
+    font-size:20px;
+}
+
+.m {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    gap: 0px;
+    width: 400px;
+    text-align: center;
+    color: black;
+}
+
+.bug {
+    background: linear-gradient(180deg, #ff9ad2, #fac4f3);
+    padding: 10px;
+    font-size: 20px;
+}
+
+.sc {
+    background: linear-gradient(180deg, #a1a7ff, #bbc2ff);
+    padding: 10px;
+    font-size: 20px;
+}
+
+.back {
+    background: linear-gradient(0deg, #b04ac7, #d4b4e9);
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 40px;
+    width: 250px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+.btn:active {
+    transform: scale(1);
+}
+
+.web {
+    position: fixed;
+    color: #fff;
+    left: 15px;
+    top: 0px;
+}
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPK MAP GUIDING</title>
+    <link rel="stylesheet" href="map_style.css">
+</head>
+<body>
+
+    <p class="web">ppk-guiding.com</p> <br>
+
+    <div class="app">
+        <header style="position: relative; height: 50px; display: flex; width: 390px;">
+            <h1 style=" font-size: 12px; position: absolute; left: 0px;">ตำแหน่งของคุณจะอยู่ตรงหมุดสีดำ</h1>
+            <button id="refresh" onclick="location.reload()" style="text-align: center;"><img id="reimg" src="icons_img/refresh.png" alt=""></button>
+            <button id="check" onclick="check_location()">-พิกัด-</button>
+        </header>
+
+        <iframe src="map2.html" id="map_frame"></iframe>
+
+        <div id="tool">
+            <!--
+            <button style="background: none; border: none; " onclick="startCompass()"> <div id="compass"> <div style="width: 40px; height: 40px; background: rgba(0, 0, 0, 0.6); border-radius: 50%;"></div> </div> </button>
+            <p style="position: absolute; top: 5px; right: 30px; font-size: 10px; color:white;">กดเข็มทิศ</p>
+            <p style="position: absolute; top: 20px; right: 20px; font-size: 10px; color:white;">เพื่อเปิดใช้งาน</p>
+            -->
+            
+        </div>
+
+        <main>
+            
+            <section class="search">
+                <h3 style="position: relative; font-size: 15px; left: 10px;">ค้นหา...</h3>
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="กรุณากรอก 'สถานที่:' หรือ 'อาคาร:' ก่อน">
+                    <div class="suggestions" id="suggestions"></div>
+                </div>
+                <button id="i"><img src="icons_img/information.png" style="width: 40px; height: auto;" onclick="information()"></button>    
+                <button id="but_search"><img id="search_icon" src="icons_img/search_icon.png" style="width: 40px; height: auto;"></button>
+            </section>
+            <div class="tail">
+                
+                <div class="side-text">
+                    <h3 id="place">กำลังโหลด...</h3>
+                    <h3 id="describe">กำลังโหลด...</h3>
+                    <ul id="describe2">
+                        <li id="desone">...</li>
+                        <li id="destwo">...</li>
+                        <li id="desthree">...</li>
+                    </ul>
+                </div>
+
+                <div class="infoscreen">
+                    <div id="infochoice">
+                        
+                        <button id="infobut1" >ตำแหน่ง</button>
+                        <button id="infobut2" >การเดินทาง</button>
+                        
+                    </div>
+                    <div id="theinfo">
+                        <h3 id="info1">กำลังโหลด...</h3>
+                    </div>
+                    
+                    <div id="fortravel">
+                        <h5 style="margin: 0; position: relative; left: 25px; color: black; font-size: 15px;">เส้นทางการเดินทาง</h5>
+                        <h3 id="travelinfo">ไปยัง : รอสักครู่...</h3>
+                        <h3 id="traveldist">ระยะทาง: รอสักครู่...</h3>
+                        <h3>รูปภาพอ้างอิง:</h3>
+                        <img src="" alt="" id="travelimg">
+                    </div>
+
+                    <img src="ppk_logo.png" alt="" id="theimg">
+                    
+                </div>
+
+                <div class="forset">
+                    <button onclick="goindex()"><img src="icons_img/HOMEPAGE.png" alt="" style="width: 20px; height: 20px;"></button>
+                    <button onclick="Setting()"><img src="icons_img/setting.png" alt="" style="width: 20px; height: 20px;"></button>
+                    <button onclick="Help()"><img src="icons_img/help_icon.png" alt="" style="width: 20px; height: 20px;" ></button>
+                </div>
+            </div>
+
+            <footer class="foot">
+                <h5 style="text-align:start; position: relative; right: 5px; top: 20px; color: rgb(83, 47, 86); font-size: 8px;">*ตำแหน่งอาจเกิดความคลาดเคลื่อนเล็กน้อย*</h5>
+                <div class="dfoot">
+                    <h5 style="text-align: end; color: rgb(0, 0, 0);">เครือข่าย:</h5>
+                    <div class="forcell">
+                        <h5 id="cell">...</h5>
+                    </div>
+                    <h5 id="net">...</h5>
+                </div>
+            </footer>
+            
+    </div>
+
+    <img class="pos">
+
+    <script src="./mark_search.js"></script>
+
+    <script src="./map.js"></script>
+    <script src="./script.js"></script>
+    <script src="./process_MAP.js"></script>
+    
+    
+</body>
+</html>
